@@ -1,11 +1,11 @@
 import { NextRequest } from 'next/server';
 import { apiHandler } from '@/lib/api/handler';
-import { getServerBaseUrl } from '@/lib/api/server-url';
+import { getBestServerBaseUrl } from '@/lib/api/server-url';
 
 export const runtime = 'edge';
 
 export const GET = apiHandler(async (request: NextRequest) => {
-  const baseUrl = getServerBaseUrl();
+  const baseUrl = getBestServerBaseUrl(request);
   const internalUrl = `${baseUrl}/api/cursor2openai/internal/chat/completions`;
 
   // 转发所有headers
@@ -23,7 +23,7 @@ export const GET = apiHandler(async (request: NextRequest) => {
 });
 
 export const POST = apiHandler(async (request: NextRequest) => {
-  const baseUrl = getServerBaseUrl();
+  const baseUrl = getBestServerBaseUrl(request);
   const internalUrl = `${baseUrl}/api/cursor2openai/internal/chat/completions`;
 
   // 转发所有headers

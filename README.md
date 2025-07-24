@@ -23,7 +23,7 @@
 
 ### 方式一：一键部署到 Vercel（推荐）
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/cursor2openai)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/jianger666/cursor2openai)
 
 1. 点击上方按钮一键部署到 Vercel
 2. 等待部署完成，获取你的域名：`https://your-domain.vercel.app`
@@ -32,7 +32,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-username/cursor2openai.git
+git clone https://github.com/jianger666/cursor2openai.git
 cd cursor2openai
 
 # 安装依赖
