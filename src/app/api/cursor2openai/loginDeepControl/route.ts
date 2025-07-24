@@ -1,12 +1,13 @@
 import { NextRequest } from 'next/server';
 import { apiHandler } from '@/lib/api/handler';
-import { getBestServerBaseUrl } from '@/lib/api/server-url';
 
 export const runtime = 'edge';
 
 export const POST = apiHandler(async (request: NextRequest) => {
-  const baseUrl = getBestServerBaseUrl(request);
-  const internalUrl = `${baseUrl}/api/cursor2openai/internal/loginDeepControl`;
+  
+  const url = new URL(request.url);
+  console.log('url',url.protocol,'//',url.host);
+  const internalUrl = `${url.protocol}//${url.host}/api/cursor2openai/internal/loginDeepControl`;
 
   // 转发所有headers
   const headers: Record<string, string> = {};
