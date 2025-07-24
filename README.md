@@ -9,6 +9,7 @@
 - ✅ 完全兼容 OpenAI API 格式
 - ✅ 支持流式响应和非流式响应
 - ✅ 无需额外服务器成本，白嫖 Vercel 的 Serverless 服务
+- ✅ 无需复杂环境变量配置，开箱即用
 
 ## 📋 前提条件
 
@@ -27,6 +28,7 @@
 
 1. 点击上方按钮一键部署到 Vercel
 2. 等待部署完成，获取你的域名：`https://your-domain.vercel.app`
+3. **无需任何环境变量配置，开箱即用！**
 
 ### 方式二：本地部署
 
@@ -40,14 +42,13 @@ npm install
 # 或使用 pnpm
 pnpm install
 
-# 设置环境变量
-echo "NEXTAUTH_URL=http://localhost:3000" > .env.local
-
 # 启动开发服务器
 npm run dev
 # 或使用 pnpm
 pnpm dev
 ```
+
+**本地开发也无需配置环境变量，默认运行在 `http://localhost:3000`**
 
 ## 🔑 获取 API Token
 
@@ -158,27 +159,6 @@ async function main() {
 }
 
 main();
-```
-
-## 🛠️ 环境变量配置
-
-### Vercel 部署
-
-Vercel 会自动添加 `VERCEL_URL` 环境变量，无需手动配置。
-
-### 自有服务器部署
-
-需要在 `.env.local` 文件中配置你的域名或 IP：
-
-```bash
-# 生产环境（必需）
-NEXTAUTH_URL=https://your-domain.com
-
-# 或者使用 IP 地址
-# NEXTAUTH_URL=http://your-server-ip:3000
-
-# 本地开发环境
-# NEXTAUTH_URL=http://localhost:3000
 ```
 
 ## 📁 项目结构
